@@ -1,18 +1,18 @@
 :root {
-    --rosa-principal: #ff85a2;
-    --rosa-claro: #fff0f3;
-    --texto: #5a3d4c;
+    --rosa-romantico: #ff69b4;
+    --fundo-suave: #fff0f6;
+    --destaque-texto: #cc0066;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, var(--rosa-claro) 0%, #ffe9ee 100%);
+    background: var(--fundo-suave);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,118 +26,119 @@ body {
 }
 
 .screen {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px);
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(255,105,180,0.15);
+    text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
-.heart-bg {
+.hidden {
+    display: none;
+}
+
+.decoracao-coracoes {
+    color: var(--rosa-romantico);
+    font-size: 3rem;
+    opacity: 0.1;
     position: absolute;
-    font-size: 8rem;
-    opacity: 0.05;
-    z-index: 0;
-    top: -30px;
-    left: -30px;
+    top: -15px;
+    left: -15px;
 }
 
-h1, h2 {
-    color: var(--rosa-principal);
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
+h1 {
+    color: var(--rosa-romantico);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
 }
 
 input {
     width: 100%;
     padding: 15px;
-    margin: 1rem 0;
-    border: 2px solid var(--rosa-principal);
-    border-radius: 8px;
+    margin: 1.5rem 0;
+    border: 3px solid var(--rosa-romantico);
+    border-radius: 12px;
     font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
     transition: all 0.3s ease;
 }
 
 input:focus {
     outline: none;
-    box-shadow: 0 0 8px var(--rosa-principal);
+    box-shadow: 0 0 15px rgba(255,105,180,0.3);
 }
 
 button {
-    background: var(--rosa-principal);
+    background: var(--rosa-romantico);
     color: white;
     border: none;
-    padding: 15px 40px;
-    border-radius: 8px;
+    padding: 15px 50px;
+    border-radius: 12px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-    width: 100%;
-    margin-top: 1rem;
+    transition: transform 0.3s, background 0.3s;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #ff6b8b;
-    transform: translateY(-2px);
+    background: #ff1493;
+    transform: scale(1.05);
 }
 
-.love-letter {
-    position: relative;
-    padding: 2rem;
+.conteudo-especial {
+    padding: 1rem;
 }
 
-.header {
+.cabecalho-romantico {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.decoracao {
-    font-size: 1.8rem;
-    color: var(--rosa-principal);
+.icone-amor {
+    font-size: 2rem;
+    color: var(--destaque-texto);
 }
 
-.message-content {
-    color: var(--texto);
+.mensagem-amor {
+    text-align: left;
     line-height: 1.8;
-    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
 }
 
-.message-content p {
+.mensagem-amor p {
     margin-bottom: 1.5rem;
-    text-align: justify;
+    padding: 0 1rem;
 }
 
-.assinatura {
-    text-align: center;
+.rodape-romantico {
     margin-top: 2rem;
-    font-style: italic;
+    border-top: 2px dashed var(--rosa-romantico);
+    padding-top: 1.5rem;
 }
 
-.coracao-pulsante {
+.selo-amor {
     font-size: 2.5rem;
-    animation: pulse 1.5s infinite;
-    margin-top: 1rem;
+    color: var(--rosa-romantico);
+    margin-bottom: 0.5rem;
 }
 
 .mensagem-erro {
-    color: #ff4d4d;
-    text-align: center;
+    color: #ff0000;
     margin: 1rem 0;
-    font-weight: 500;
+    font-weight: bold;
+    animation: shake 0.4s;
     display: none;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
 }
 
 @media (max-width: 480px) {
@@ -149,7 +150,7 @@ button:hover {
         font-size: 1.5rem;
     }
     
-    .message-content {
+    .mensagem-amor {
         font-size: 1rem;
     }
-  }
+    }
