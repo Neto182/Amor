@@ -23,7 +23,7 @@ function verificarResposta() {
             document.getElementById('homenagemScreen').style.animation = 'aparecer 0.5s';
         }, 300);
     } else {
-        mostrarErro('Resposta incorreta! Tente novamente ❤');
+        mostrarErro('Porquê digitar outro nome se é so você que eu tenho? ❤');
         input.value = '';
         input.focus();
     }
